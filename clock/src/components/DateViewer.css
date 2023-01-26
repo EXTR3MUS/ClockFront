@@ -1,0 +1,25 @@
+.current-date{
+    font-size: 70pt;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    border: solid 2px #fff;
+    border-radius: 10px;
+    width: 350pt;
+
+    background-color: rgb(51, 54, 59);
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.3);
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 300;
+
+    margin: 50px 0;
+}

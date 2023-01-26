@@ -1,0 +1,46 @@
+.timer{
+    background-color: #3e4247;
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 8px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.25);
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.serial-timer-top{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.serial-timer-description{
+    margin: auto;
+    /* font-family: 'Noto Sans Mono', monospace; */
+    font-size: 18pt;
+    font-weight: 500;
+    color: rgb(226, 226, 226);
+    z-index: 1;
+}
+
+.timer:hover{
+    background-color: rgb(74, 80, 83);
+    cursor: pointer;
+}
+
+.serial-timer-text{
+    font-size: 32pt;
+    text-align: center;
+    /* font-family: 'Noto Sans Mono', monospace; */
+    color: rgb(163, 163, 163);
+    z-index: 1;
+}
