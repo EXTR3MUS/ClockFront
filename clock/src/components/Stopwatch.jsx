@@ -2,6 +2,9 @@ import React, {useEffect, useRef} from "react";
 import "./Stopwatch.css"
 import {format} from "./utils";
 
+import {MdPlayArrow, MdPause, MdReplay} from "react-icons/md";
+import { IconContext } from "react-icons/lib";
+
 
 const Stopwatch = (props) => {
     const [time, setTime] = React.useState(props.time);
@@ -59,6 +62,9 @@ const Stopwatch = (props) => {
                     <div className="serial-timer-description">{props.description}</div>
                 </div>
                 <div className="serial-timer-text" timer-id={props.id} >{format(time)}</div>
+                <IconContext.Provider value={{ size: "40px" }}>
+                    {isOn ? <MdPause className="serial-timer-icon"/> : <MdPlayArrow className="serial-timer-icon"/>}
+                </IconContext.Provider>
             </div>
         </div>
     )

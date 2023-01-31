@@ -2,6 +2,9 @@ import React, {useEffect, useRef} from "react";
 import "./Timer.css"
 import {format} from "./utils";
 
+import {MdPlayArrow, MdPause, MdReplay} from "react-icons/md";
+import { IconContext } from "react-icons/lib";
+
 const Timer = (props) => {
     const [time, setTime] = React.useState(props.time);
     const [initialTime, setInitialTime] = React.useState(props.initialTime);
@@ -56,6 +59,18 @@ const Timer = (props) => {
         }
     }
 
+    function reset_timer(e){
+        // preventing cascading event
+        e.stopPropagation();
+
+        setIsOn(false);
+        setIsRinging(false);
+        timerDivRef.current.classList.remove("ringing");
+        audioRef.current.pause()
+
+        setTime(props.time);
+    }
+
 
     function tick(){
         if(isOnRef.current){
@@ -90,6 +105,12 @@ const Timer = (props) => {
                     <div className="serial-timer-description">{props.description}</div>
                 </div>
                 <div className="serial-timer-text" timer-id={props.id} >{format(time, isRinging)}</div>
+                <div className="icons">
+                    <IconContext.Provider value={{size: "40px"}}>
+                        <MdReplay onClick={reset_timer}></MdReplay>
+                        {isOn ? <MdPause /> : <MdPlayArrow />}
+                    </IconContext.Provider>
+                </div>
             </div>
         </div>
     )
