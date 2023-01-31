@@ -17,6 +17,27 @@
     user-select: none; /* Standard */
 }
 
+.timer.ringing{
+    animation-name: ring;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ring {
+    0% {
+        box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.25);
+        background-color: #583636;
+    }
+    50% {
+        box-shadow: 0 0 40px 0 rgba(255, 0, 0, 0.25);
+        background-color: #921818;
+    }
+    100% {
+        box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.25);
+        background-color: #583636;
+    }
+}
+
 .serial-timer-top{
     display: flex;
     width: 100%;
@@ -44,3 +65,5 @@
     color: rgb(163, 163, 163);
     z-index: 1;
 }
+
+

@@ -5,7 +5,7 @@ import './TimerGroup.css'
 function TimerGroup() {
     const times = [3, 5, 7, 8, 10, 15, 20, 25, 30, 35, 45, 60]
 
-    const [currentTimerTime, setCurrentTimerTime] = React.useState(50)
+    const [currentTimerTime, setCurrentTimerTime] = React.useState(3)
     const [isOn, setIsOn] = React.useState(false)
 
     function on_click(i){

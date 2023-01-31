@@ -10,6 +10,9 @@ const Timer = (props) => {
 
     const isOnRef = useRef(isOn);
     const timeRef = useRef(time);
+    const isRingingRef = useRef(isRinging);
+
+    const timerDivRef = useRef(null);
 
     let audio = new Audio('alarm.mp3');
     let audioRef = useRef(audio);
@@ -29,7 +32,8 @@ const Timer = (props) => {
     useEffect(() => {
         isOnRef.current = isOn;
         timeRef.current = time;
-    }, [isOn, time]);
+        isRingingRef.current = isRinging;
+    }, [isOn, time, isRinging]);
 
     // updating when changing props
     useEffect(() => {
@@ -41,7 +45,9 @@ const Timer = (props) => {
     function on_item_click(){
         
         if(isRinging){
+            setIsOn(false);
             setIsRinging(false);
+            timerDivRef.current.classList.remove("ringing");
             audioRef.current.pause()
 
             setTime(props.time);
@@ -53,26 +59,37 @@ const Timer = (props) => {
 
     function tick(){
         if(isOnRef.current){
-            if(timeRef.current > 1){
+            document.title = format(timeRef.current);
+
+            if(timeRef.current > 0){
                 setTime(timeRef.current - 1);
-            }else{
-                setIsOn(false);
+            }
+
+            if(isRingingRef.current){
+                setTime(timeRef.current + 1);
+                console("ringing")
+            }else if(timeRef.current === 0){
                 setIsRinging(true);
                 setTime(0);    
 
                 audioRef.current.play();
+                audioRef.current.loop = true;
+
+                // adding ring class to timer
+                timerDivRef.current.classList.add("ringing");
             }
+            
         }
     }
 
     return(
         <div>
-            <div className="timer" onClick={on_item_click}>
+            <div className="timer" ref={timerDivRef} onClick={on_item_click}>
                 <div className="circle-top"></div>
                 <div className="serial-timer-top">
                     <div className="serial-timer-description">{props.description}</div>
                 </div>
-                <div className="serial-timer-text" timer-id={props.id} >{format(time)}</div>
+                <div className="serial-timer-text" timer-id={props.id} >{format(time, isRinging)}</div>
             </div>
         </div>
     )
