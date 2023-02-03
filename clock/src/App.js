@@ -28,3 +28,6 @@ function App() {
 }
 
 export default App;
+
+// icons library docs
+// https://react-icons.github.io/react-icons
