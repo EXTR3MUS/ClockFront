@@ -102,7 +102,7 @@ const Timer = (props) => {
             <div className="timer" ref={timerDivRef} onClick={on_item_click}>
                 <div className="circle-top"></div>
                 <div className="serial-timer-top">
-                    <div className="serial-timer-description">{props.description}</div>
+                    {/* <div className="serial-timer-description">{props.description}</div> */}
                 </div>
                 <div className="serial-timer-text" timer-id={props.id} >{format(time, isRinging)}</div>
                 <div className="icons">

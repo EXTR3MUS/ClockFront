@@ -7,23 +7,24 @@ function TimerGroup() {
 
     const [currentTimerTime, setCurrentTimerTime] = React.useState(3)
     const [isOn, setIsOn] = React.useState(false)
+    const [description, setDescription] = React.useState("testing")
 
     function on_click(i){
         console.log(i)
         setCurrentTimerTime(i*60)
         setIsOn(true)
         console.log(currentTimerTime)
+        setDescription(`${i} minutes`)
     }
 
   return (
     <div className='timer-group-container'>
-        <h1>Timer</h1>
         <div className='clock-timer'>
-            <Timer time={currentTimerTime} initial_time={currentTimerTime} isOn={isOn} description="testing" />
+            <Timer time={currentTimerTime} initial_time={currentTimerTime} isOn={isOn} description={description} />
         </div>
         <div className="timer-group-time-list">
             {times.map((time) => (
-                <div key={time} className='time-item' onClick={()=>{on_click(time)}}>{time} minutes</div>
+                <div key={time} className='time-item' onClick={()=>{on_click(time)}}>{time} min</div>
             ))}
         </div>
         

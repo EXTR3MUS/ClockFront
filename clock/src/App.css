@@ -10,8 +10,7 @@
 }
 
 body{
-  background-color: #282c34;
-
+  background-color: #333;
 }
 
 .clock-container {
@@ -22,6 +21,12 @@ body{
   /* background-color: rgb(204, 89, 89); */
   width: 100%;
   flex: 1;
+}
+
+.clock-container h1 {
+  color: #777;
+  background: rgba(0,0,0,0.3);
+  margin-top: 0;
 }
 
 .clock-container-top{
@@ -84,12 +89,3 @@ body{
   border-top: solid 1px rgb(99, 99, 99);
 }
 
-.clock-timer{
-  /* background-color: rgb(202, 99, 171); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}

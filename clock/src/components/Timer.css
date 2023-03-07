@@ -1,5 +1,5 @@
 .timer{
-    background-color: #3e4247;
+    background-color: rgba(0,0,0,0.3);
     width: 200px;
     height: 200px;
     border-radius: 150px;
@@ -62,6 +62,6 @@
     font-size: 32pt;
     text-align: center;
     /* font-family: 'Noto Sans Mono', monospace; */
-    color: rgb(163, 163, 163);
+    color: rgb(100, 170, 220);
     z-index: 1;
 }

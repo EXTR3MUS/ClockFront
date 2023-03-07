@@ -1,6 +1,4 @@
-.timer-group-container{
-    width: 100%;
-}
+
 
 .timer-group-time-list{
     display: flex;
@@ -8,11 +6,14 @@
     align-items: space-around;
     flex-wrap: wrap;
     height: 120px;
+
+    width: 70%;
 }
 
 .time-item{
+    color: #aaa;
     margin: 4px 8px;
-    background-color: #3e4247;
+    background: rgba(0,0,0,0.3);
     width: 100px;
     padding: 1px;
     border-radius: 2px;
@@ -21,4 +22,5 @@
 .time-item:hover{
     cursor: pointer;
 }
+
 

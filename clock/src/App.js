@@ -2,6 +2,7 @@ import './App.css';
 import DateViewer from './components/DateViewer';
 import TimerGroup from './components/TimerGroup';
 import Stopwatch from './components/Stopwatch';
+import Container from './components/Container';
 
 function App() {
   return (
@@ -11,13 +12,14 @@ function App() {
       </div>
       <div className="clock-container">
         <div className="clock-container-left">
-          <h1>Stopwatch</h1>
-          <div className='clock-stopwatch'>
+          <Container title="Stopwatch">
             <Stopwatch time={0}/>
-          </div>
+          </Container>
         </div>
         <div className="clock-container-right">
-          <TimerGroup />
+          <Container title="Timer">
+            <TimerGroup />
+          </Container>
         </div>
       </div>
       <div className="clock-container-bottom">
